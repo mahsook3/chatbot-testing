@@ -146,7 +146,6 @@
     const translatedText = document.getElementById('translatedText');
     const translatedTextContent = document.getElementById('translatedTextContent');
   
-    // Populate language selector
     indianLanguages.forEach(lang => {
       const option = document.createElement('option');
       option.value = lang.code;
@@ -154,7 +153,6 @@
       languageSelector.appendChild(option);
     });
   
-    // Toggle chat window visibility
     chatbotToggle.addEventListener('click', () => {
       chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
     });
@@ -163,7 +161,6 @@
       chatWindow.style.display = 'none';
     });
   
-    // Handle translation
     translateButton.addEventListener('click', async () => {
       const selectedLanguage = languageSelector.value;
       const selectedText = window.getSelection().toString();
@@ -179,7 +176,6 @@
       }
   
       try {
-        // Simulate translation API response
         const response = { data: { query: `Translated text for: ${selectedText}` } };
         translatedTextContent.textContent = response.data.query;
         translatedText.style.display = 'block';
